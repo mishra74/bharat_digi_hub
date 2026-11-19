@@ -63,3 +63,30 @@ body.cloud-page {
     animation: none;
   }
 }
+
+.cloud-typing .hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.cloud-info .shadow-blob,
+.cloud-typing .shadow-blob,
+.cloud-aicm .shadow-blob {
+  position: absolute;
+  inset: auto 0 12%;
+  width: min(260px, 75%);
+  height: 70px;
+  margin-inline: auto;
+  background: radial-gradient(ellipse, rgba(43, 55, 116, .24), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.cloud-info .shadow-blob,
+.cloud-typing .shadow-blob {
+  z-index: -1;
+}
+
+.cloud-info .shadow-blob {
+  bottom: 10px;
+}
