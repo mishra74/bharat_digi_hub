@@ -25,20 +25,6 @@ body.cloud-page {
     linear-gradient(155deg, #f5f4ff 0%, #fff 54%, #f8faff 100%);
 }
 
-.cloud-info .info-page-header {
-  background:
-    radial-gradient(ellipse 150px 56px at 92% 15%, rgba(189, 206, 255, .42), transparent 76%),
-    radial-gradient(ellipse 110px 42px at 82% 26%, rgba(255, 255, 255, .88), transparent 78%),
-    linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(247, 247, 255, .88));
-}
-
-.cloud-typing .container {
-  background:
-    radial-gradient(ellipse 185px 74px at 8% 6%, rgba(255, 255, 255, .86), transparent 76%),
-    radial-gradient(ellipse 220px 88px at 93% 36%, rgba(211, 216, 255, .34), transparent 76%),
-    radial-gradient(ellipse 190px 72px at 18% 94%, rgba(219, 228, 255, .4), transparent 76%);
-}
-
 .cloud-aicm .hero {
   background-image:
     radial-gradient(ellipse 210px 82px at 8% 22%, rgba(255, 255, 255, .8), transparent 76%),
@@ -64,7 +50,7 @@ body.cloud-page {
   }
 }
 
-.cloud-typing .hero {
+.cloud-typing .typing-hero {
   position: relative;
   isolation: isolate;
 }
@@ -89,4 +75,54 @@ body.cloud-page {
 
 .cloud-info .shadow-blob {
   bottom: 10px;
+}
+
+.cloud-typing .container {
+  margin: clamp(105px, 12vw, 150px) auto clamp(64px, 9vw, 104px);
+}
+
+.cloud-typing .typing-hero {
+  padding: clamp(30px, 6vw, 64px) clamp(16px, 5vw, 48px);
+  border: 1px solid rgba(64, 70, 152, .15);
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 86% 8%, #dce4ff, transparent 54%),
+    linear-gradient(145deg, #fcfbff, #eeeaff);
+  box-shadow: 0 20px 55px rgba(39, 36, 99, .12);
+}
+
+.cloud-typing .typing-hero h1,
+.cloud-aicm .aicm-title {
+  font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+  letter-spacing: -.045em;
+}
+
+.cloud-typing .typing-card {
+  border: 1px solid rgba(64, 70, 152, .15);
+  box-shadow: 0 20px 55px rgba(39, 36, 99, .12);
+}
+
+.cloud-aicm .aicm-title span {
+  color: #253bc2;
+}
+
+.cloud-aicm .hero {
+  isolation: isolate;
+  height: auto;
+  align-content: center;
+}
+
+.cloud-aicm .hero::before {
+  z-index: -1;
+}
+
+@media (max-width: 640px) {
+  .cloud-aicm .hero {
+    align-items: flex-start;
+    padding-bottom: 38svh;
+  }
+
+  .cloud-aicm #hero-canvas {
+    mask-image: linear-gradient(transparent 25%, #000 58%);
+  }
 }

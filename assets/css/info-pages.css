@@ -23,7 +23,7 @@
 
 .info-page-inner {
   position: relative;
-  width: min(1000px, 100%);
+  width: min(1120px, 100%);
   margin: 0 auto;
 }
 
@@ -48,19 +48,33 @@
 }
 
 .info-page-header {
-  position: static;
+  position: relative;
   inset: auto;
   z-index: auto;
+  isolation: isolate;
   display: block;
   margin-bottom: 28px;
-  padding: clamp(28px, 5vw, 54px);
+  padding: clamp(32px, 6vw, 72px);
   overflow: hidden;
   border: 1px solid rgba(15, 15, 58, .08);
   border-radius: 28px;
   background:
-    radial-gradient(ellipse at 92% 0%, rgba(203, 212, 255, .56), transparent 42%),
-    linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(247, 247, 255, .88));
+    radial-gradient(ellipse at 88% 12%, #cddaff, transparent 56%),
+    radial-gradient(ellipse at 64% 100%, #e5dbff, transparent 56%),
+    linear-gradient(135deg, #fff, #f0effe);
   box-shadow: 0 24px 70px rgba(48, 43, 111, .10);
+}
+
+.info-page-header::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: repeating-radial-gradient(
+    ellipse at 100% 40%, transparent 0 22px, rgba(54, 72, 157, .12) 23px 24px
+  );
+  mask-image: linear-gradient(90deg, transparent 48%, #000);
+  pointer-events: none;
+  content: "";
 }
 
 .info-page-header .eyebrow {
@@ -108,7 +122,11 @@
 
 .info-page-content {
   display: grid;
-  gap: 16px;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.info-case-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .info-page-section,
@@ -248,7 +266,7 @@
   align-items: start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .info-page {
     padding-right: 16px;
     padding-left: 16px;
@@ -258,6 +276,7 @@
     border-radius: 22px;
   }
 
+  .info-case-layout,
   .info-contact-layout {
     grid-template-columns: 1fr;
   }

@@ -17,6 +17,11 @@
     <meta name="twitter:description" content="Practice typing and track your speed and accuracy with TypeMaster.">
     <link rel="stylesheet" href="assets/css/whatsapp-float.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -25,46 +30,20 @@
         }
 
         :root {
-            --primary: #6658f5;
-            --primary-light: #eeeaff;
+            --primary: #1937bd;
+            --primary-light: #e9edff;
             --dark: #20213a;
-            --muted: #888ba5;
+            --typing-muted: #555779;
             --background: #f7f7fc;
             --correct: #20a879;
             --wrong: #ef5261;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Montserrat', system-ui, sans-serif;
             background: var(--background);
             color: var(--dark);
             min-height: 100vh;
-        }
-
-        /* Navbar */
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
-            background: white;
-            border-bottom: 1px solid #eeeef5;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--dark);
-        }
-
-        .nav-tag {
-            color: var(--muted);
-            font-size: 14px;
         }
 
         /* Main container */
@@ -74,7 +53,7 @@
             margin: 50px auto;
         }
 
-        .hero {
+        .typing-hero {
             text-align: center;
             margin-bottom: 35px;
         }
@@ -90,18 +69,18 @@
             margin-bottom: 18px;
         }
 
-        .hero h1 {
+        .typing-hero h1 {
             font-size: clamp(30px, 5vw, 45px);
             margin-bottom: 14px;
             letter-spacing: -1.5px;
         }
 
-        .hero h1 span {
+        .typing-hero h1 span {
             color: var(--primary);
         }
 
-        .hero p {
-            color: var(--muted);
+        .typing-hero p {
+            color: var(--typing-muted);
             font-size: 15px;
             line-height: 1.7;
         }
@@ -127,7 +106,7 @@
 
         .section-label {
             font-size: 13px;
-            color: var(--muted);
+            color: var(--typing-muted);
             margin-bottom: 10px;
         }
 
@@ -197,7 +176,7 @@
         }
 
         .stat-name {
-            color: var(--muted);
+            color: var(--typing-muted);
             font-size: 12px;
         }
 
@@ -232,7 +211,7 @@
         }
 
         .passage-heading span {
-            color: var(--muted);
+            color: var(--typing-muted);
             font-size: 12px;
         }
 
@@ -248,6 +227,7 @@
             letter-spacing: 0.3px;
             color: #a1a2b5;
             overflow-wrap: anywhere;
+            white-space: pre-wrap;
         }
 
         .passage span.correct {
@@ -310,7 +290,7 @@
             justify-content: space-between;
             gap: 10px;
             flex-wrap: wrap;
-            color: var(--muted);
+            color: var(--typing-muted);
             font-size: 12px;
             margin-top: 12px;
         }
@@ -354,28 +334,11 @@
             color: white;
         }
 
-        /* Footer */
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
         /* Responsive */
 
         @media (max-width: 600px) {
-            .navbar {
-                padding: 18px 5%;
-            }
-
             .container {
                 margin: 32px auto;
-            }
-
-            .nav-tag {
-                font-size: 11px;
             }
 
             .typing-card {
@@ -407,20 +370,38 @@
         }
     </style>
     <link rel="stylesheet" href="assets/css/cloud-design.css">
+    <script src="assets/js/site-chrome.js" defer></script>
 </head>
 
-<body class="cloud-page cloud-typing">
+<body id="top" class="cloud-page cloud-typing">
 
-    <!-- Navbar -->
     <header class="navbar">
-        <div class="logo">Type<span>Master.</span></div>
-        <div class="nav-tag">Practice. Improve. Achieve.</div>
+      <a class="logo" href="./#top" aria-label="BharatDigiHub home">
+        <img src="assets/image/logo/logo.png" alt="BharatDigiHub logo" height="50">
+      </a>
+      <nav id="primary-navigation" aria-label="Main">
+        <a href="./#services">Services</a><a href="./#stack">Technologies</a><a href="./#industries">Industries</a><a
+          href="./#story">About</a>
+      </nav>
+      <a class="btn navbar-cta" href="./#contact">Get started</a>
+      <details class="mobile-navigation">
+        <summary class="navbar-toggle" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </summary>
+        <nav aria-label="Mobile main">
+          <a href="./#services">Services</a>
+          <a href="./#stack">Technologies</a>
+          <a href="./#industries">Industries</a>
+          <a href="./#story">About</a>
+          <a class="btn primary mobile-menu-cta" href="./#contact">Get started <span aria-hidden="true">→</span></a>
+        </nav>
+      </details>
     </header>
 
     <main class="container">
 
         <!-- Hero -->
-        <section class="hero">
+        <section class="typing-hero">
             <div class="shadow-blob" aria-hidden="true"></div>
             <div class="badge">⚡ FREE TYPING SPEED TEST</div>
 
@@ -528,9 +509,163 @@
 
     </main>
 
-    <footer>
-        © 2026 TypeMaster. Keep practicing, keep improving.
-    </footer>
+  <footer class="site-footer" id="footer">
+    <div class="footer-glow"></div>
+    <div class="footer-dots"></div>
+
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="footer-logo" href="./#top" aria-label="BharatDigiHub home">
+          <img src="assets/image/logo/logo.png" alt="BharatDigiHub Logo" width="140" height="100">
+        </a>
+
+        <p class="footer-description">
+          We create innovative software solutions, modern websites
+          and digital products that help businesses grow, work smarter
+          and achieve their goals.
+        </p>
+
+        <a class="footer-email" href="mailto:bharatdigihub@gmail.com">
+          <i class="fa-regular fa-envelope"></i>
+          bharatdigihub@gmail.com
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a class="footer-cta" href="./#contact">
+          Contact Us
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="footer-social">
+          <h3>Follow us</h3>
+
+          <div class="social-icons">
+            <!-- Replace # with your official profile URLs -->
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://wa.me/919386468815" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-column">
+        <h3><span class="footer-heading-line"></span>Explore</h3>
+
+        <a href="./#services"><i class="fa-solid fa-angle-right"></i> Services</a>
+        <a href="./#stack"><i class="fa-solid fa-angle-right"></i> Technologies</a>
+        <a href="./#industries"><i class="fa-solid fa-angle-right"></i> Industries</a>
+        <a href="./#story"><i class="fa-solid fa-angle-right"></i> About Us</a>
+        <a href="contactus"><i class="fa-solid fa-angle-right"></i> Contact</a>
+      </div>
+
+      <!-- Contact details -->
+      <div class="footer-column footer-contact">
+        <h3><span class="footer-heading-line"></span>Contact Us</h3>
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-regular fa-envelope"></i>
+          </span>
+          <div>
+            <small>Email</small>
+            <a href="mailto:sales@www.bharatdigicash.com">sales@www.bharatdigicash.com</a>
+          </div>
+        </div>
+
+        <!-- <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <div>
+            <small>Landline</small>
+            <a href="tel:01145657842">011-45657842</a>
+          </div>
+        </div> -->
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </span>
+          <div>
+            <small>Mobile</small>
+            <a href="tel:+919386468815">91-9386468815</a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
+          <div>
+            <small>Address</small>
+            <p>
+              C/o Arbind Kumar, Vill- Asthawan, Tola- Soyba Par, Panch- Asthawan, , Bihar, Bihar, India - 803107
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company policies -->
+      <div class="footer-column">
+        <h3><span class="footer-heading-line"></span>Company</h3>
+
+        <a href="contactus">
+          <i class="fa-solid fa-angle-right"></i> Contact Us
+        </a>
+        <a href="refund-policy">
+          <i class="fa-solid fa-angle-right"></i> Refund Policy
+        </a>
+        <a href="privacy-policy">
+          <i class="fa-solid fa-angle-right"></i> Privacy Policy
+        </a>
+        <a href="term_conditions">
+          <i class="fa-solid fa-angle-right"></i> Terms &amp; Conditions
+        </a>
+        <a href="case-study">
+          <i class="fa-solid fa-angle-right"></i> Case Studies
+        </a>
+        <a href="license">
+          <i class="fa-solid fa-angle-right"></i> License &amp; Copyright
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>
+        © <span id="footer-year">2026</span>
+        <strong>BharatDigiHub</strong>.
+        All rights reserved.
+      </p>
+
+      <div class="footer-legal">
+        <a href="privacy-policy">Privacy</a>
+        <span></span>
+        <a href="term_conditions">Terms</a>
+      </div>
+
+      <a class="back-to-top" href="#top">
+        Back to top <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
 
     <script>
         const paragraphs = [
@@ -584,8 +719,7 @@
             [...currentParagraph].forEach((character, index) => {
                 const span = document.createElement("span");
 
-                // Preserve visible spaces
-                span.textContent = character === " " ? "\u00A0" : character;
+                span.textContent = character;
 
                 if (index === 0) {
                     span.classList.add("current");
@@ -596,7 +730,7 @@
         }
 
         // Reset the typing test
-        function resetTest(newParagraph = false) {
+        function resetTest(newParagraph = false, focusInput = true) {
             clearInterval(timerInterval);
 
             started = false;
@@ -623,7 +757,7 @@
 
             renderPassage();
 
-            typingInput.focus();
+            if (focusInput) typingInput.focus();
         }
 
         // Calculate typing statistics
@@ -814,7 +948,7 @@
             });
 
         // Initialize website
-        resetTest(true);
+        resetTest(true, false);
     </script>
 
     <a class="whatsapp-float" href="https://wa.me/919386468815" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">

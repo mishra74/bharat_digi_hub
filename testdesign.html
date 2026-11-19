@@ -17,8 +17,12 @@
   <meta name="twitter:description" content="An AI-powered decentralized marketplace concept for intelligent digital services.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/whatsapp-float.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     /* === RESET & GLOBAL === */
     * {
@@ -28,110 +32,21 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Montserrat', system-ui, sans-serif;
       background: #f5f6fa;
       color: #0b1120;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* === NAVBAR === */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 4rem;
-      z-index: 100;
-      background: rgba(245, 246, 250, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0b1120;
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    /* Custom Diamond Logo */
-    .logo-icon {
-      width: 28px;
-      height: 28px;
-      position: relative;
-    }
-    .logo-icon::before, .logo-icon::after {
-      content: '';
-      position: absolute;
-      background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-      border-radius: 4px;
-    }
-    .logo-icon::before {
-      width: 16px; height: 16px;
-      top: 0; left: 6px;
-    }
-    .logo-icon::after {
-      width: 16px; height: 16px;
-      bottom: 0; left: 6px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      opacity: 0.7;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #4b5563;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #0b1120;
-    }
-
-    .nav-cta {
-      padding: 0.6rem 1.6rem;
-      border-radius: 9999px;
-      background: #ffffff;
-      color: #0b1120;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      transition: all 0.2s ease;
-    }
-
-    .nav-cta:hover {
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-      transform: translateY(-1px);
-    }
-
     /* === HERO SECTION === */
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
-      padding: 0 4rem;
+      padding: 115px clamp(20px, 6vw, 90px) 60px;
       overflow: hidden;
       background: #f5f6fa;
     }
@@ -151,10 +66,9 @@
       position: relative;
       z-index: 2;
       max-width: 550px;
-      margin-top: 4rem;
     }
 
-    .hero-title {
+    .aicm-title {
       font-size: clamp(2.8rem, 4.5vw, 4.2rem);
       font-weight: 800;
       line-height: 1.1;
@@ -172,61 +86,224 @@
 
     /* === RESPONSIVE === */
     @media (max-width: 1024px) {
-      .navbar { padding: 1.2rem 2rem; }
-      .nav-links { display: none; }
-      .hero { padding: 0 2rem; }
       .hero-content { max-width: 100%; }
     }
 
     @media (max-width: 640px) {
-      .hero-title { font-size: 2.2rem; }
+      .aicm-title { font-size: 2.2rem; }
       .hero-desc { font-size: 1rem; }
-      .navbar { padding: 1rem 1.5rem; }
-      .hero { padding: 0 1.5rem; }
     }
   </style>
   <link rel="stylesheet" href="assets/css/cloud-design.css">
+  <script src="assets/js/site-chrome.js" defer></script>
 </head>
-<body class="cloud-page cloud-aicm">
+<body id="top" class="cloud-page cloud-aicm">
 
-  <!-- === NAVBAR === -->
-  <nav class="navbar">
-    <a href="#" class="logo">
-      <div class="logo-icon"></div>
-      aicm
-    </a>
-    <ul class="nav-links">
-      <li><a href="#">Create a store</a></li>
-      <li><a href="#">Advertise</a></li>
-      <li><a href="#">Affiliate program</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    <a href="#" class="nav-cta">Get started</a>
-  </nav>
+    <header class="navbar">
+      <a class="logo" href="./#top" aria-label="BharatDigiHub home">
+        <img src="assets/image/logo/logo.png" alt="BharatDigiHub logo" height="50">
+      </a>
+      <nav id="primary-navigation" aria-label="Main">
+        <a href="./#services">Services</a><a href="./#stack">Technologies</a><a href="./#industries">Industries</a><a
+          href="./#story">About</a>
+      </nav>
+      <a class="btn navbar-cta" href="./#contact">Get started</a>
+      <details class="mobile-navigation">
+        <summary class="navbar-toggle" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </summary>
+        <nav aria-label="Mobile main">
+          <a href="./#services">Services</a>
+          <a href="./#stack">Technologies</a>
+          <a href="./#industries">Industries</a>
+          <a href="./#story">About</a>
+          <a class="btn primary mobile-menu-cta" href="./#contact">Get started <span aria-hidden="true">→</span></a>
+        </nav>
+      </details>
+    </header>
 
-  <!-- === HERO SECTION === -->
-  <section class="hero">
-    <div class="shadow-blob" aria-hidden="true"></div>
-    <canvas id="hero-canvas"></canvas>
+  <main>
+    <section class="hero">
+      <div class="shadow-blob" aria-hidden="true"></div>
+      <canvas id="hero-canvas"></canvas>
 
-    <div class="hero-content">
-      <h1 class="hero-title">
-        The Smarter,<br>
-        AI Powered<br>
-        Decentralized<br>
-        Marketplace
-      </h1>
-      <p class="hero-desc">
-        Harness the power of decentralized AI marketplace with AICM.
-      </p>
+      <div class="hero-content">
+        <h1 class="aicm-title">
+          The Smarter,<br>
+          <span>AI Powered</span><br>
+          Decentralized<br>
+          Marketplace
+        </h1>
+        <p class="hero-desc">
+          Harness the power of decentralized AI marketplace with AICM.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-glow"></div>
+    <div class="footer-dots"></div>
+
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a class="footer-logo" href="./#top" aria-label="BharatDigiHub home">
+          <img src="assets/image/logo/logo.png" alt="BharatDigiHub Logo" width="140" height="100">
+        </a>
+
+        <p class="footer-description">
+          We create innovative software solutions, modern websites
+          and digital products that help businesses grow, work smarter
+          and achieve their goals.
+        </p>
+
+        <a class="footer-email" href="mailto:bharatdigihub@gmail.com">
+          <i class="fa-regular fa-envelope"></i>
+          bharatdigihub@gmail.com
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a class="footer-cta" href="./#contact">
+          Contact Us
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="footer-social">
+          <h3>Follow us</h3>
+
+          <div class="social-icons">
+            <!-- Replace # with your official profile URLs -->
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://wa.me/919386468815" aria-label="WhatsApp" title="WhatsApp" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-column">
+        <h3><span class="footer-heading-line"></span>Explore</h3>
+
+        <a href="./#services"><i class="fa-solid fa-angle-right"></i> Services</a>
+        <a href="./#stack"><i class="fa-solid fa-angle-right"></i> Technologies</a>
+        <a href="./#industries"><i class="fa-solid fa-angle-right"></i> Industries</a>
+        <a href="./#story"><i class="fa-solid fa-angle-right"></i> About Us</a>
+        <a href="contactus"><i class="fa-solid fa-angle-right"></i> Contact</a>
+      </div>
+
+      <!-- Contact details -->
+      <div class="footer-column footer-contact">
+        <h3><span class="footer-heading-line"></span>Contact Us</h3>
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-regular fa-envelope"></i>
+          </span>
+          <div>
+            <small>Email</small>
+            <a href="mailto:sales@www.bharatdigicash.com">sales@www.bharatdigicash.com</a>
+          </div>
+        </div>
+
+        <!-- <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <div>
+            <small>Landline</small>
+            <a href="tel:01145657842">011-45657842</a>
+          </div>
+        </div> -->
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </span>
+          <div>
+            <small>Mobile</small>
+            <a href="tel:+919386468815">91-9386468815</a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <span class="footer-info-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
+          <div>
+            <small>Address</small>
+            <p>
+              C/o Arbind Kumar, Vill- Asthawan, Tola- Soyba Par, Panch- Asthawan, , Bihar, Bihar, India - 803107
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company policies -->
+      <div class="footer-column">
+        <h3><span class="footer-heading-line"></span>Company</h3>
+
+        <a href="contactus">
+          <i class="fa-solid fa-angle-right"></i> Contact Us
+        </a>
+        <a href="refund-policy">
+          <i class="fa-solid fa-angle-right"></i> Refund Policy
+        </a>
+        <a href="privacy-policy">
+          <i class="fa-solid fa-angle-right"></i> Privacy Policy
+        </a>
+        <a href="term_conditions">
+          <i class="fa-solid fa-angle-right"></i> Terms &amp; Conditions
+        </a>
+        <a href="case-study">
+          <i class="fa-solid fa-angle-right"></i> Case Studies
+        </a>
+        <a href="license">
+          <i class="fa-solid fa-angle-right"></i> License &amp; Copyright
+        </a>
+      </div>
+
     </div>
-  </section>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>
+        © <span id="footer-year">2026</span>
+        <strong>BharatDigiHub</strong>.
+        All rights reserved.
+      </p>
+
+      <div class="footer-legal">
+        <a href="privacy-policy">Privacy</a>
+        <span></span>
+        <a href="term_conditions">Terms</a>
+      </div>
+
+      <a class="back-to-top" href="#top">
+        Back to top <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
 
   <!-- === THREE.JS === -->
   <script type="importmap">
     {
       "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
       }
     }
   </script>
@@ -243,7 +320,7 @@
     // Camera: Matching the slight angle from the reference
     const camera = new THREE.PerspectiveCamera(
       40,
-      window.innerWidth / window.innerHeight,
+      canvas.clientWidth / canvas.clientHeight,
       0.1,
       1000
     );
@@ -255,7 +332,7 @@
       antialias: true,
       alpha: true,
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0); 
     
@@ -432,12 +509,13 @@
     // =============================================
     // 9. RESIZE HANDLER
     // =============================================
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+    const canvasObserver = new ResizeObserver(() => {
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     });
+    canvasObserver.observe(canvas);
   </script>
 
   <a class="whatsapp-float" href="https://wa.me/919386468815" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">

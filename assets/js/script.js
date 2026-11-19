@@ -24,41 +24,6 @@ if (!tabs || !grid) {
   });
   show('All');
 }
-const navbar = document.querySelector('.navbar');
-
-if (navbar) {
-  const updateNavbar = () => {
-    navbar.classList.toggle('sticky', window.scrollY > 50);
-  };
-
-  window.addEventListener('scroll', updateNavbar, { passive: true });
-  updateNavbar();
-}
-
-const mobileNavigation = document.querySelector('.mobile-navigation');
-
-if (mobileNavigation) {
-  mobileNavigation.addEventListener('click', (event) => {
-    if (event.target instanceof Element && event.target.closest('a')) {
-      mobileNavigation.open = false;
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
-
-    if (!navbar) return;
-
-    function handleScroll() {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Apply the correct state when the page loads
-    handleScroll();
-});
   // The spotlight stays still while hovering a technology; it shines from
     // the row's left edge and focuses on the card under the pointer.
     document.querySelectorAll(".stack-row").forEach((row) => {
@@ -99,21 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
       
-window.addEventListener("scroll", function () {
-    const hero = document.querySelector(".hero-wave");
-    const navbar = document.querySelector(".navbar");
-if(window.scrollY > 50) {
-        navbar.classList.add("sticky");
-    } else {
-        navbar.classList.remove("sticky");
-    }
-    if (window.scrollY > 650) {
-        // hero.classList.add("sticky");
-    } else {
-        hero.classList.remove("sticky");
-    }
-});
-
 const modalTriggers = new Map([
     ["#services", document.getElementById("servicesModal")],
     ["#stack", document.getElementById("technologyModal")],

@@ -28,43 +28,44 @@
   <link rel="stylesheet" href="assets/css/whatsapp-float.css">
   <link rel="stylesheet" href="assets/css/cloud-design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="assets/js/site-chrome.js" defer></script>
 </head>
-<body class="cloud-page cloud-info">
-  <header class="navbar">
-    <a class="logo" href="./" aria-label="BharatDigiHub home">
-      <img src="assets/image/logo/logo.png" alt="BharatDigiHub logo" height="50">
-    </a>
-    <nav id="primary-navigation" aria-label="Main">
-      <a href="./#services">Services</a>
-      <a href="./#stack">Technologies</a>
-      <a href="./#industries">Industries</a>
-      <a href="./#story">About</a>
-    </nav>
-    <a class="btn navbar-cta" href="contactus">Get started</a>
-    <details class="mobile-navigation">
-      <summary class="navbar-toggle" aria-label="Open navigation menu"><span></span><span></span><span></span></summary>
-      <nav aria-label="Mobile main">
-        <a href="./#services">Services</a>
-        <a href="./#stack">Technologies</a>
-        <a href="./#industries">Industries</a>
-        <a href="./#story">About</a>
-        <a class="btn primary mobile-menu-cta" href="contactus">Get started <span aria-hidden="true">→</span></a>
+<body id="top" class="cloud-page cloud-info">
+    <header class="navbar">
+      <a class="logo" href="./#top" aria-label="BharatDigiHub home">
+        <img src="assets/image/logo/logo.png" alt="BharatDigiHub logo" height="50">
+      </a>
+      <nav id="primary-navigation" aria-label="Main">
+        <a href="./#services">Services</a><a href="./#stack">Technologies</a><a href="./#industries">Industries</a><a
+          href="./#story">About</a>
       </nav>
-    </details>
-  </header>
+      <a class="btn navbar-cta" href="./#contact">Get started</a>
+      <details class="mobile-navigation">
+        <summary class="navbar-toggle" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </summary>
+        <nav aria-label="Mobile main">
+          <a href="./#services">Services</a>
+          <a href="./#stack">Technologies</a>
+          <a href="./#industries">Industries</a>
+          <a href="./#story">About</a>
+          <a class="btn primary mobile-menu-cta" href="./#contact">Get started <span aria-hidden="true">→</span></a>
+        </nav>
+      </details>
+    </header>
 <main class="info-page">
   <div class="shadow-blob" aria-hidden="true"></div>
   <div class="info-page-inner">
     <a class="info-page-breadcrumb" href="./#top"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>&nbsp; Back to BharatDigiHub</a>
     <header class="info-page-header"><span class="eyebrow">BHARATDIGIHUB</span><h1>Case Studies</h1><p>Examples of the kinds of digital challenges BharatDigiHub helps businesses address.</p></header>
-    <div class="info-page-content">
+    <div class="info-page-content info-case-layout">
       <section class="info-page-section" aria-labelledby="operations"><h2 id="operations">Customer and business operations</h2><p>We help teams explore CRM and ERP solutions that bring customer information and day-to-day workflows into clearer view. Typical work can include requirements discovery, workflow design, implementation and integration planning.</p></section>
       <section class="info-page-section" aria-labelledby="digital-products"><h2 id="digital-products">Digital products and applications</h2><p>From web platforms to mobile experiences, our work focuses on making products easier to use and maintain. Projects can include product planning, interface design, application development and ongoing improvements.</p></section>
       <section class="info-page-section" aria-labelledby="cloud-systems"><h2 id="cloud-systems">Cloud and connected systems</h2><p>We support businesses exploring cloud services and connected technology, with attention to their specific operational needs, integration requirements and plans for future growth.</p></section>
       <section class="info-page-section" aria-labelledby="examples"><h2 id="examples">About these examples</h2><p>These are representative service areas, not named client case studies or claims of specific results. We do not publish customer names, project details or performance metrics here. Contact us to discuss relevant experience for your project.</p></section>
     </div>
   </div></main>
-<footer class="site-footer" id="footer">
+  <footer class="site-footer" id="footer">
     <div class="footer-glow"></div>
     <div class="footer-dots"></div>
 
@@ -88,7 +89,7 @@
           <span aria-hidden="true">↗</span>
         </a>
 
-        <a class="footer-cta" href="contactus">
+        <a class="footer-cta" href="./#contact">
           Contact Us
           <span aria-hidden="true">→</span>
         </a>
@@ -216,7 +217,7 @@
         <a href="term_conditions">Terms</a>
       </div>
 
-      <a class="back-to-top" href="./#top">
+      <a class="back-to-top" href="#top">
         Back to top <i class="fa-solid fa-arrow-up"></i>
       </a>
     </div>
