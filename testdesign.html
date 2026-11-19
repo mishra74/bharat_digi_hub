@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AICM | AI Powered Marketplace</title>
+  <meta name="description" content="Discover AICM, an AI-powered decentralized marketplace concept built to connect users with intelligent digital services.">
+  <meta name="keywords" content="AI marketplace, decentralized marketplace, artificial intelligence platform, digital marketplace">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f5f6fa">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AICM">
+  <meta property="og:title" content="AICM | AI Powered Marketplace">
+  <meta property="og:description" content="An AI-powered decentralized marketplace concept for intelligent digital services.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AICM | AI Powered Marketplace">
+  <meta name="twitter:description" content="An AI-powered decentralized marketplace concept for intelligent digital services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/whatsapp-float.css">
+  <style>
+    /* === RESET & GLOBAL === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f6fa;
+      color: #0b1120;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      z-index: 100;
+      background: rgba(245, 246, 250, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0b1120;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    /* Custom Diamond Logo */
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      position: relative;
+    }
+    .logo-icon::before, .logo-icon::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+      border-radius: 4px;
+    }
+    .logo-icon::before {
+      width: 16px; height: 16px;
+      top: 0; left: 6px;
+    }
+    .logo-icon::after {
+      width: 16px; height: 16px;
+      bottom: 0; left: 6px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      opacity: 0.7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #0b1120;
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.6rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #0b1120;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+      overflow: hidden;
+      background: #f5f6fa;
+    }
+
+    /* 3D Canvas */
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 550px;
+      margin-top: 4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: #0b1120;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6b7280;
+      max-width: 420px;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .navbar { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 2rem; }
+      .hero-content { max-width: 100%; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2.2rem; }
+      .hero-desc { font-size: 1rem; }
+      .navbar { padding: 1rem 1.5rem; }
+      .hero { padding: 0 1.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/cloud-design.css">
+</head>
+<body class="cloud-page cloud-aicm">
+
+  <!-- === NAVBAR === -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <div class="logo-icon"></div>
+      aicm
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Create a store</a></li>
+      <li><a href="#">Advertise</a></li>
+      <li><a href="#">Affiliate program</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Get started</a>
+  </nav>
+
+  <!-- === HERO SECTION === -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        The Smarter,<br>
+        AI Powered<br>
+        Decentralized<br>
+        Marketplace
+      </h1>
+      <p class="hero-desc">
+        Harness the power of decentralized AI marketplace with AICM.
+      </p>
+    </div>
+  </section>
+
+  <!-- === THREE.JS === -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    // =============================================
+    // 1. SETUP SCENE, CAMERA, RENDERER
+    // =============================================
+    const canvas = document.getElementById('hero-canvas');
+    const scene = new THREE.Scene();
+
+    // Camera: Matching the slight angle from the reference
+    const camera = new THREE.PerspectiveCamera(
+      40,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    camera.position.set(0, 1.5, 10);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true,
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0); 
+    
+    // Enable soft shadows
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    // =============================================
+    // 2. LIGHTING (Soft Studio Setup)
+    // =============================================
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambientLight);
+
+    // Main light casting shadows from top-left
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    mainLight.position.set(-5, 8, 5);
+    mainLight.castShadow = true;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
+    mainLight.shadow.camera.near = 1;
+    mainLight.shadow.camera.far = 30;
+    mainLight.shadow.camera.left = -10;
+    mainLight.shadow.camera.right = 10;
+    mainLight.shadow.camera.top = 10;
+    mainLight.shadow.camera.bottom = -10;
+    mainLight.shadow.bias = -0.0005;
+    mainLight.shadow.radius = 4;
+    scene.add(mainLight);
+
+    // Fill light for the right side
+    const fillLight = new THREE.DirectionalLight(0xe0e7ff, 1.0);
+    fillLight.position.set(5, 0, 5);
+    scene.add(fillLight);
+
+    // =============================================
+    // 3. SHADOW CATCHER FLOOR
+    // =============================================
+    const floorGeo = new THREE.PlaneGeometry(30, 30);
+    const floorMat = new THREE.ShadowMaterial({ 
+      opacity: 0.12, 
+      color: 0x000000 
+    });
+    const floor = new THREE.Mesh(floorGeo, floorMat);
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -3;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    // =============================================
+    // 4. SUBTLE GRID
+    // =============================================
+    const gridHelper = new THREE.GridHelper(30, 30, 0x000000, 0x000000);
+    gridHelper.position.y = -2.99;
+    gridHelper.material.opacity = 0.04;
+    gridHelper.material.transparent = true;
+    scene.add(gridHelper);
+
+    // =============================================
+    // 5. CREATE THE GLOSSY TUBE
+    // =============================================
+    // The curve goes from top-center, curves right, then down and off-screen
+    const points = [
+      new THREE.Vector3(-1.5, 4.5, 0),
+      new THREE.Vector3(0.5, 2.5, 1),
+      new THREE.Vector3(2.5, 0, 1),
+      new THREE.Vector3(3.5, -3, 0),
+      new THREE.Vector3(4.5, -6, -1)
+    ];
+    const curve = new THREE.CatmullRomCurve3(points);
+
+    // Thicker tube to match the reference
+    const tubeGeo = new THREE.TubeGeometry(curve, 120, 0.9, 32, false);
+
+    // Glossy, pearlescent white material
+    const tubeMat = new THREE.MeshPhysicalMaterial({
+      color: 0xffffff,
+      roughness: 0.08,
+      metalness: 0.05,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.1,
+      envMapIntensity: 1.0,
+      side: THREE.DoubleSide,
+    });
+
+    const tube = new THREE.Mesh(tubeGeo, tubeMat);
+    tube.castShadow = true;
+    tube.receiveShadow = true;
+    scene.add(tube);
+
+    // =============================================
+    // 6. THE GOLD DISC (Embedded in the tube)
+    // =============================================
+    // Position along the curve (around 60% down)
+    const t = 0.55; 
+    const pointOnCurve = curve.getPoint(t);
+    const tangent = curve.getTangent(t);
+
+    // Create a flat disc (coin)
+    const discGeo = new THREE.CylinderGeometry(0.65, 0.65, 0.15, 64);
+    const discMat = new THREE.MeshStandardMaterial({
+      color: 0xd4af37, // Gold
+      metalness: 1.0,
+      roughness: 0.15,
+    });
+    const disc = new THREE.Mesh(discGeo, discMat);
+    disc.castShadow = true;
+    disc.receiveShadow = true;
+
+    // Position and orient the disc
+    disc.position.copy(pointOnCurve);
+    
+    // Orient the disc to align with the curve, but tilted slightly towards the camera
+    const upVector = new THREE.Vector3(0, 1, 0);
+    const quaternion = new THREE.Quaternion().setFromUnitVectors(
+      upVector, 
+      tangent.clone().normalize()
+    );
+    disc.quaternion.copy(quaternion);
+    
+    // Rotate it slightly so the face is visible to the camera
+    disc.rotateX(Math.PI / 2);
+    disc.rotateZ(Math.PI / 4);
+
+    scene.add(disc);
+
+    // =============================================
+    // 7. FLOATING PARTICLES (Stardust)
+    // =============================================
+    const particlesGeo = new THREE.BufferGeometry();
+    const particleCount = 400;
+    const positions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 25;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+    }
+
+    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const particlesMat = new THREE.PointsMaterial({
+      size: 0.06,
+      color: 0x9ca3af,
+      transparent: true,
+      opacity: 0.4,
+      sizeAttenuation: true,
+    });
+
+    const particles = new THREE.Points(particlesGeo, particlesMat);
+    scene.add(particles);
+
+    // =============================================
+    // 8. ANIMATION LOOP
+    // =============================================
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const elapsedTime = clock.getElapsedTime();
+
+      // Gentle floating motion for particles
+      particles.rotation.y = elapsedTime * 0.01;
+      particles.rotation.x = Math.sin(elapsedTime * 0.05) * 0.02;
+
+      // Subtle pulsing of the gold disc
+      disc.scale.setScalar(1 + Math.sin(elapsedTime * 1.5) * 0.03);
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // =============================================
+    // 9. RESIZE HANDLER
+    // =============================================
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    });
+  </script>
+
+  <a class="whatsapp-float" href="https://wa.me/919386468815" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.711.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 0 1 2.892 6.993c-.003 5.45-4.437 9.887-9.885 9.887m8.413-18.3A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.946L.057 24l6.304-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.478-8.413Z"/>
+    </svg>
+  </a>
+</body>
+</html>

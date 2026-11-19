@@ -1,0 +1,65 @@
+body.cloud-page {
+  background-image:
+    radial-gradient(ellipse 180px 72px at 8% 14%, rgba(255, 255, 255, .46), transparent 76%),
+    radial-gradient(ellipse 240px 94px at 92% 30%, rgba(199, 215, 255, .24), transparent 76%),
+    radial-gradient(ellipse 220px 82px at 18% 82%, rgba(210, 224, 255, .2), transparent 76%);
+  background-attachment: fixed;
+}
+
+.cloud-home #top.hero {
+  background-image:
+    radial-gradient(ellipse 220px 82px at 12% 18%, rgba(255, 255, 255, .72), transparent 74%),
+    radial-gradient(ellipse 250px 94px at 82% 17%, rgba(255, 255, 255, .55), transparent 76%),
+    radial-gradient(ellipse 190px 72px at 66% 82%, rgba(173, 203, 255, .3), transparent 76%),
+    radial-gradient(ellipse 70% 55% at 35% 25%, var(--glow), transparent 70%),
+    linear-gradient(160deg, var(--bg2), var(--bg));
+  background-size: 115% 115%;
+  animation: cloud-drift 26s ease-in-out infinite alternate;
+}
+
+.cloud-info .info-page {
+  background-image:
+    radial-gradient(ellipse 190px 74px at 8% 15%, rgba(255, 255, 255, .75), transparent 76%),
+    radial-gradient(ellipse 245px 96px at 94% 22%, rgba(193, 207, 255, .34), transparent 76%),
+    radial-gradient(ellipse 210px 78px at 16% 78%, rgba(211, 224, 255, .3), transparent 76%),
+    linear-gradient(155deg, #f5f4ff 0%, #fff 54%, #f8faff 100%);
+}
+
+.cloud-info .info-page-header {
+  background:
+    radial-gradient(ellipse 150px 56px at 92% 15%, rgba(189, 206, 255, .42), transparent 76%),
+    radial-gradient(ellipse 110px 42px at 82% 26%, rgba(255, 255, 255, .88), transparent 78%),
+    linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(247, 247, 255, .88));
+}
+
+.cloud-typing .container {
+  background:
+    radial-gradient(ellipse 185px 74px at 8% 6%, rgba(255, 255, 255, .86), transparent 76%),
+    radial-gradient(ellipse 220px 88px at 93% 36%, rgba(211, 216, 255, .34), transparent 76%),
+    radial-gradient(ellipse 190px 72px at 18% 94%, rgba(219, 228, 255, .4), transparent 76%);
+}
+
+.cloud-aicm .hero {
+  background-image:
+    radial-gradient(ellipse 210px 82px at 8% 22%, rgba(255, 255, 255, .8), transparent 76%),
+    radial-gradient(ellipse 240px 94px at 90% 30%, rgba(196, 211, 255, .38), transparent 76%),
+    radial-gradient(ellipse 180px 68px at 26% 88%, rgba(219, 228, 255, .4), transparent 76%),
+    linear-gradient(145deg, #f5f6fa, #eef2ff);
+}
+
+@keyframes cloud-drift {
+  from { background-position: 0 0, 100% 0, 15% 100%, 0 0, 0 0; }
+  to { background-position: 2% 2%, 97% 2%, 18% 97%, 0 0, 0 0; }
+}
+
+@media (max-width: 600px) {
+  .cloud-home #top.hero {
+    background-size: 150% 120%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud-home #top.hero {
+    animation: none;
+  }
+}
